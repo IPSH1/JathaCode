@@ -1,2 +1,2 @@
 # JathaCode
-Waah Khalsa Waah fateh
+Waheguru Ji Ka Khalsa Waheguru Ji Ki Fateh
