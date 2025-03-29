@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GiftEase AI Chat</title>
+    <link rel="shortcut icon" href="ChatGPT Image Mar 29, 2025, 04_42_23 PM.png" type="image/x-icon">
+    <script src="https://cdn.botpress.cloud/webchat/v2.3/inject.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,6 +15,7 @@
             display: flex;
             flex-direction: column;
             height: 100vh;
+            
         }
 
         .chat-container {
@@ -30,20 +33,35 @@
         }
 
         .chat-header {
-            padding: 1rem;
+            font-family: copperplate;
+            font-weight: bold;
+            word-spacing: 5px;
+            font-size: 20px;
+           display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px 10px 0 0;
+            padding: 20px;
             background-color: #e75f88;
             color: white;
             text-align: center;
-            font-size: 1.5rem;
+            font-size: 3rem;
+            height: 40px;
             border-top-left-radius: 10px;
             border-top-right-radius: 10px;
+            
         }
-
         .chat-content {
             flex: 1;
             display: flex;
             justify-content: center;
             align-items: center;
+        }
+        .chat-content iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 0 0 10px 10px;    
         }
 
         #webchat {
@@ -63,8 +81,6 @@
             display: none;
         }
     </style>
-
-    <script src="https://cdn.botpress.cloud/webchat/v2.3/inject.js"></script>
 </head>
 <body>
     <div class="chat-container">
@@ -73,21 +89,36 @@
             <div id="webchat"></div>
         </div>
     </div>
-
     <script>
         window.botpress.on("webchat:ready", () => {
             window.botpress.open();
-            window.botpress.sendEvent({ type: "configure", payload: { "theme": "#ff7897" } });
         });
         window.botpress.init({
             "botId": "f83dc76a-1108-4860-8edc-23972252d0d6",
             "configuration": {
-                "website": {},
-                "email": {},
-                "phone": {},
+                "composerPlaceholder": "CHAT WITH GIFT EASE",
+                "botName": "GIFT EASE",
+                "botAvatar": "https://files.bpcontent.cloud/2025/03/29/11/20250329113448-VW66O0RV.png",
+                "botDescription": "GIFT EASE by CODING JATTHA ",
+                "website": {
+                    "title": "www.madhuresh453.com",
+                    "link": "www.madhuresh453.com"
+                },
+                "email": {
+                    "title": "madhuresh453@gmail.com",
+                    "link": "madhuresh453@gmail.com"
+                },
+                "phone": {
+                    "title": "6239015723",
+                    "link": "6239015723"
+                },
                 "termsOfService": {},
                 "privacyPolicy": {},
-                "theme": "#ff7897"
+                "color": "#E75F88",
+                "variant": "solid",
+                "themeMode": "light",
+                "fontFamily": "fira",
+                "radius": 4
             },
             "clientId": "79fb5908-32d0-438d-b9be-cb307c072bf1",
             "selector": "#webchat"
