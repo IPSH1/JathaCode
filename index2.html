@@ -276,7 +276,22 @@
                 <p>Perfect gifts for your loved ones!!</p>
                 <button class="btn-3d">Get Started</button>
             </div>
-            <div id="3d-model"></div>
+        </section>
+
+        <!-- Chat Interface Section -->
+        <section id="chat-interface">
+            <div class="chat-container">
+                <div class="chat-header">
+                    <h3>GiftEase Chat</h3>
+                </div>
+                <div class="chat-messages" id="chat-messages">
+                    <!-- Chat messages will appear here -->
+                </div>
+                <div class="chat-input">
+                    <textarea id="user-input" placeholder="Type your message here..."></textarea>
+                    <button id="send-btn" class="btn-3d">Send</button>
+                </div>
+            </div>
         </section>
 
         <section id="services">
@@ -352,6 +367,30 @@
             renderer.render(scene, camera);
         }
         animate();
+
+        // Chat functionality
+        const chatMessages = document.getElementById('chat-messages');
+        const userInput = document.getElementById('user-input');
+        const sendBtn = document.getElementById('send-btn');
+
+        sendBtn.addEventListener('click', () => {
+            const userMessage = userInput.value.trim();
+            if (userMessage) {
+                addMessage(userMessage, 'user');
+                userInput.value = '';
+                setTimeout(() => {
+                    addMessage('Thank you for your message! How can I assist you?', 'bot');
+                }, 1000);
+            }
+        });
+
+        function addMessage(text, sender) {
+            const message = document.createElement('div');
+            message.classList.add('message', sender);
+            message.textContent = text;
+            chatMessages.appendChild(message);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
     </script>
 </body>
 </html>
