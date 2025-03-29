@@ -6,247 +6,273 @@
     <title>GiftEase</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
 
 <style>
     /* General Styles */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(to bottom, #f0f8ff, #e6e6fa);
-    color: #333;
-    overflow: auto; /* Re-enable scrolling */
-}
+    body {
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(to bottom, #f0f8ff, #e6e6fa);
+        color: #333;
+        overflow: auto;
+    }
 
-header {
-    background-color: #e75f88;
-    color: white;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    border-style: solid ;
-}
-
-header .logo h1 {
-    margin: 0;
-    font-size: 1.8rem;
-}
-
-
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-nav ul li a:hover {
-    color: #f3b655;
-}
-
-/* Hero Section */
-.hero {
-    text-align: center;
-    padding: 4rem 2rem;
-    background: linear-gradient(to bottom, #e75f88, #ffc691ad);
-    color: white;
-}
-
-.hero h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-.hero p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-}
-
-.btn-3d {
-    background-color: #ffcc00;
-    color: #333;
-    border: none;
-    padding: 0.8rem 1.5rem;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 5px;
-    box-shadow: 0 4px #d4a017;
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.btn-3d:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px #b38f13;
-}
-
-/* Services Section */
-#services {
-    padding: 3rem 2rem;
-    background-color: #ffc691ad;
-    text-align: center;
-}
-
-#services h2 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-}
-
-.service-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-}
-
-.card {
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 1.5rem;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-.card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: #4a90e2;
-}
-
-.card p {
-    font-size: 1rem;
-    color: #666;
-}
-
-/* About Section */s
-#about {
-    padding: 3rem 2rem;
-    color: #333;
-    text-align: center; 
-}
-
-#about h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    text-align: center;
-}
-
-#about p {
-    font-size: 1.2rem;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-/* Contact Section */
-#contact {
-    padding: 3rem 2rem;
-    background:linear-gradient(to bottom, #ffc691ad, #636eba);
-    color: white;
-    text-align: center;
-}
-
-#contact h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-form {
-    max-width: 500px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-form label {
-    font-size: 1rem;
-    font-weight: bold;
-}
-
-form input, form textarea {
-    padding: 0.8rem;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-}
-
-form button {
-    align-self: center;
-}
-
-/* Footer */
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 1rem 0;
-}
-
-/* Chatbox */
-#chatbox {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 300px;
-}
-
-#chat-toggle {
-    width: 100%;
-}
-
-#chat-content {
-    background: white;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 1rem;
-    margin-top: 0.5rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow:-moz-hidden-unscrollable; /* Allow scrolling if content overflows */
-}
-
-/* Media Queries */
-@media (max-width: 768px) {
     header {
-        flex-direction: column;
-        align-items: flex-start;
+        background: linear-gradient(to right, #e75f88, #f3b655);
+        color: white;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    header .logo h1 {
+        margin: 0;
+        font-size: 2rem;
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     }
 
     nav ul {
-        flex-direction: column;
-        gap: 0.5rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        font-size: 1.1rem;
+        transition: color 0.3s, transform 0.3s;
+    }
+
+    nav ul li a:hover {
+        color: #ffcc00;
+        transform: scale(1.1);
+    }
+
+    /* Hero Section */
+    .hero {
+        text-align: center;
+        padding: 5rem 2rem;
+        background: linear-gradient(to bottom, #e75f88, #ffc691ad);
+        color: white;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
     }
 
     .hero h2 {
-        font-size: 2rem;
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     }
 
     .hero p {
-        font-size: 1rem;
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
     }
 
     .btn-3d {
-        padding: 0.6rem 1rem;
-        font-size: 0.9rem;
+        background: linear-gradient(to right, #ffcc00, #f3b655);
+        color: #333;
+        border: none;
+        padding: 1rem 2rem;
+        font-size: 1.2rem;
+        font-weight: bold;
+        border-radius: 50px;
+        box-shadow: 0 6px #d4a017;
+        cursor: pointer;
+        transition: transform 0.3s, box-shadow 0.3s;
     }
-}
 
+    .btn-3d:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px #b38f13;
+    }
 
+    /* Services Section */
+    #services {
+        padding: 3rem 2rem;
+        background-color: #ffc691ad;
+        text-align: center;
+    }
+
+    #services h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .service-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+    }
+
+    .card {
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 1.5rem;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: #4a90e2;
+    }
+
+    .card p {
+        font-size: 1rem;
+        color: #666;
+    }
+
+    /* About Section */
+    #about {
+        padding: 4rem 2rem;
+        background: linear-gradient(to bottom, #ffc691ad, #d4709ac1);
+        color: #333;
+        text-align: center;
+        border-radius: 20px;
+        margin: 2rem;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    #about h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+        color: #4a90e2;
+    }
+
+    #about p {
+        font-size: 1.3rem;
+        max-width: 700px;
+        margin: 0 auto;
+        line-height: 1.8;
+    }
+
+    /* Contact Section */
+    #contact {
+        padding: 4rem 2rem;
+        background: linear-gradient(to bottom, #d4709ac1, #636eba);
+        color: white;
+        text-align: center;
+        border-radius: 20px;
+        margin: 2rem;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    #contact h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    form {
+        max-width: 600px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    form input, form textarea {
+        padding: 1rem;
+        border: none;
+        border-radius: 10px;
+        font-size: 1.1rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    form button {
+        background: linear-gradient(to right, #ffcc00, #f3b655);
+        color: #333;
+        border: none;
+        padding: 1rem 2rem;
+        font-size: 1.2rem;
+        font-weight: bold;
+        border-radius: 50px;
+        box-shadow: 0 6px #d4a017;
+        cursor: pointer;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    form button:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px #b38f13;
+    }
+
+    /* Footer */
+    footer {
+        background: linear-gradient(to right, #333, #444);
+        color: white;
+        text-align: center;
+        padding: 1.5rem 0;
+        font-size: 1rem;
+        box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    footer p {
+        margin: 0;
+    }
+
+    /* Chatbox */
+    #chatbox {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 300px;
+    }
+
+    #chat-toggle {
+        width: 100%;
+    }
+
+    #chat-content {
+        background: white;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 1rem;
+        margin-top: 0.5rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow:-moz-hidden-unscrollable; /* Allow scrolling if content overflows */
+    }
+
+    /* Media Queries */
+    @media (max-width: 768px) {
+        header {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        nav ul {
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+        }
+
+        .hero p {
+            font-size: 1rem;
+        }
+
+        .btn-3d {
+            padding: 0.6rem 1rem;
+            font-size: 0.9rem;
+        }
+    }
 </style>
     
 </head>
@@ -272,9 +298,9 @@ footer {
             <div class="hero">
                 <h2>Your Trusted Gift Advisor   </h2>
                 <p>Perfect gifts for your loved ones!!</p>
-                <button class="btn-3d" id="get-started-btn">Get Started</button>
-            <!-- </div> -->
-        
+                <a href="2ndpg.html" class="btn-3d">Go to Example</a>
+            </div>
+        </section>  
 
         <!-- Chat Interface Section -->
         <!-- <section id="chat-interface">
@@ -331,9 +357,7 @@ footer {
         <p>&copy; 2025 GiftEase. All rights reserved.</p>
     </footer>
 
-    <script src="https://cdn.botpress.cloud/webchat/v2.3/inject.js" style="width: 80%;"></script>
-    <script src="https://files.bpcontent.cloud/2025/03/28/20/20250328204611-X4HPFH3V.js" style="width: 80%;"></script>
-
+    
     <script>
         // Chatbox toggle functionality
         const chatToggle = document.getElementById('chat-toggle');
@@ -395,4 +419,4 @@ footer {
         }
     </script>
 </body>
-</html>
+</html> 
