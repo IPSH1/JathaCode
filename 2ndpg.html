@@ -6,7 +6,26 @@
     <title>GiftEase AI Chat</title>
     <link rel="shortcut icon" href="ChatGPT Image Mar 29, 2025, 04_42_23 PM.png" type="image/x-icon">
     <script src="https://cdn.botpress.cloud/webchat/v2.3/inject.js"></script>
+    <!-- Botpress script -->
+   <!-- In your <head> tag -->
     <style>
+        #webchat .bpWebchat {
+          position: unset;
+          width: 100%;
+          height: 100%;
+          max-height: 100%;
+          max-width: 100%;
+        }
+      
+        #webchat .bpFab {
+          display: none;
+        }
+      
+
+
+
+
+    
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -15,7 +34,6 @@
             display: flex;
             flex-direction: column;
             height: 100vh;
-            
         }
 
         .chat-container {
@@ -28,7 +46,7 @@
             margin: auto;
             border: 1px solid #ccc;
             border-radius: 10px;
-            background: linear-gradient(to bottom, #ffc691ad,#ff789796);
+            background: linear-gradient(to bottom, #ffc691ad, #ff789796);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
@@ -36,8 +54,7 @@
             font-family: copperplate;
             font-weight: bold;
             word-spacing: 5px;
-            font-size: 20px;
-           display: flex;
+            display: flex;
             justify-content: center;
             align-items: center;
             border-radius: 10px 10px 0 0;
@@ -47,82 +64,46 @@
             text-align: center;
             font-size: 3rem;
             height: 40px;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
-            
         }
+
         .chat-content {
             flex: 1;
             display: flex;
             justify-content: center;
             align-items: center;
         }
-        .chat-content iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            border-radius: 0 0 10px 10px;    
-        }
 
-        #webchat {
-            width: 100%;
-            height: 100%;
-        }
-
-        #webchat .bpWebchat {
-            position: unset;
-            width: 100%;
-            height: 100%;
-            max-height: 100%;
-            max-width: 100%;
-        }
-
-        #webchat .bpFab {
-            display: none;
-        }
+        
     </style>
 </head>
 <body>
     <div class="chat-container">
         <div class="chat-header">GiftEase AI Chat</div>
-        <div class="chat-content">
-            <div id="webchat"></div>
-        </div>
+        <div id="webchat" style="width: 100%; height: 100%;"></div>
     </div>
+   
+</body>
     <script>
         window.botpress.on("webchat:ready", () => {
-            window.botpress.open();
+          window.botpress.open();
         });
         window.botpress.init({
-            "botId": "f83dc76a-1108-4860-8edc-23972252d0d6",
-            "configuration": {
-                "composerPlaceholder": "CHAT WITH GIFT EASE",
-                "botName": "GIFT EASE",
-                "botAvatar": "https://files.bpcontent.cloud/2025/03/29/11/20250329113448-VW66O0RV.png",
-                "botDescription": "GIFT EASE by CODING JATTHA ",
-                "website": {
-                    "title": "www.madhuresh453.com",
-                    "link": "www.madhuresh453.com"
-                },
-                "email": {
-                    "title": "madhuresh453@gmail.com",
-                    "link": "madhuresh453@gmail.com"
-                },
-                "phone": {
-                    "title": "6239015723",
-                    "link": "6239015723"
-                },
-                "termsOfService": {},
-                "privacyPolicy": {},
-                "color": "#E75F88",
-                "variant": "solid",
-                "themeMode": "light",
-                "fontFamily": "fira",
-                "radius": 4
-            },
-            "clientId": "79fb5908-32d0-438d-b9be-cb307c072bf1",
-            "selector": "#webchat"
-        });
-    </script>
-</body>
+        "botId": "fa6cdc22-84aa-46bb-9c91-1c96fb598bde",
+        "configuration": {
+          "botAvatar": "https://files.bpcontent.cloud/2025/03/29/22/20250329221646-6343DQLB.png",
+          "website": {},
+          "email": {},
+          "phone": {},
+          "termsOfService": {},
+          "privacyPolicy": {},
+          "color": "#5eb1ef",
+          "variant": "soft",
+          "themeMode": "dark",
+          "fontFamily": "fira",
+          "radius": 0.5
+        },
+        "clientId": "c20d9f0e-1b5b-481b-8835-45ac324606a9",
+        "selector": "#webchat"
+      });
+      </script>
 </html>
