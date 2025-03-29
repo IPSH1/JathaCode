@@ -39,100 +39,59 @@
             border-top-right-radius: 10px;
         }
 
-        .chat-messages {
+        .chat-content {
             flex: 1;
-            padding: 1rem;
-            overflow-y: auto;
             display: flex;
-            flex-direction: column;
-            gap: 1rem;
+            justify-content: center;
+            align-items: center;
         }
 
-        .message {
-            max-width: 80%;
-            padding: 0.8rem;
-            border-radius: 10px;
-            font-size: 1rem;
+        #webchat {
+            width: 100%;
+            height: 100%;
         }
 
-        .message.user {
-            align-self: flex-end;
-            background-color: #4a90e2;
-            color: white;
+        #webchat .bpWebchat {
+            position: unset;
+            width: 100%;
+            height: 100%;
+            max-height: 100%;
+            max-width: 100%;
         }
 
-        .message.bot {
-            align-self: flex-start;
-            background-color: #f1f1f1;
-            color: #333;
-        }
-
-        .chat-input {
-            display: flex;
-            padding: 1rem;
-            border-top: 1px solid #ccc;
-        }
-
-        .chat-input textarea {
-            flex: 1;
-            padding: 0.8rem;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 1rem;
-            resize: none;
-        }
-
-        .chat-input button {
-            margin-left: 1rem;
-            padding: 0.8rem 1.5rem;
-            background-color: #e75f88;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            cursor: pointer;
-        }
-
-        .chat-input button:hover {
-            background-color: #357ab8;
+        #webchat .bpFab {
+            display: none;
         }
     </style>
+
+    <script src="https://cdn.botpress.cloud/webchat/v2.3/inject.js"></script>
 </head>
 <body>
     <div class="chat-container">
         <div class="chat-header">GiftEase AI Chat</div>
-        <div class="chat-messages" id="chat-messages">
-            <!-- Chat messages will appear here -->
-        </div>
-        <div class="chat-input">
-            <textarea id="user-input" placeholder="Type your message here..." rows="1"></textarea>
-            <button id="send-btn">Send</button>
+        <div class="chat-content">
+            <div id="webchat"></div>
         </div>
     </div>
 
     <script>
-        const chatMessages = document.getElementById('chat-messages');
-        const userInput = document.getElementById('user-input');
-        const sendBtn = document.getElementById('send-btn');
-
-        sendBtn.addEventListener('click', () => {
-            const userMessage = userInput.value.trim();
-            if (userMessage) {
-                addMessage(userMessage, 'user');
-                userInput.value = '';
-                setTimeout(() => {
-                    addMessage('Thank you for your message! How can I assist you?', 'bot');
-                }, 1000);
-            }
+        window.botpress.on("webchat:ready", () => {
+            window.botpress.open();
+            window.botpress.sendEvent({ type: "configure", payload: { "theme": "#ff7897" } });
         });
-
-        function addMessage(text, sender) {
-            const message = document.createElement('div');
-            message.classList.add('message', sender);
-            message.textContent = text;
-            chatMessages.appendChild(message);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-        }
+        window.botpress.init({
+            "botId": "f83dc76a-1108-4860-8edc-23972252d0d6",
+            "configuration": {
+                "website": {},
+                "email": {},
+                "phone": {},
+                "termsOfService": {},
+                "privacyPolicy": {},
+                "theme": "#ff7897"
+            },
+            "clientId": "79fb5908-32d0-438d-b9be-cb307c072bf1",
+            "selector": "#webchat"
+        });
     </script>
 </body>
 </html>
