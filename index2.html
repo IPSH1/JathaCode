@@ -8,14 +8,11 @@
     <link rel="shortcut icon" href="ChatGPT Image Mar 29, 2025, 04_42_23 PM.png" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
     <script src="script.js"></script>
-
-
 <style>
-    *{
+    * {
         margin: 0;
         padding: 0;
     }
-    /* General Styles */
     body {  
         font-family: 'Poppins', sans-serif;
         margin: 0;
@@ -24,7 +21,6 @@
         color: #333;
         overflow: auto;
     }
-
     header {
         background: linear-gradient(to right, #e75f88, #f68645d4);
         color: white;
@@ -35,14 +31,12 @@
         flex-wrap: wrap;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
-
     header .logo h1 {
         margin: 0;
         font-size: 2rem;
         font-weight: bold;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     }
-
     nav ul {
         list-style: none;
         margin: 0;
@@ -50,7 +44,6 @@
         display: flex;
         gap: 1.5rem;
     }
-
     nav ul li a {
         text-decoration: none;
         color: white;
@@ -58,34 +51,28 @@
         font-size: 1.1rem;
         transition: color 0.3s, transform 0.3s;
     }
-
     nav ul li a:hover {
         color: black;
         transform: scale(1.1);
     }
-
-    /* Hero Section */
     .hero {
         text-align: center;
         border-radius: 10px;
-        padding: 4.76dvw ;  
+        padding: 4.76dvw;
         background: linear-gradient(to bottom, #e75f88, #ffd0a4ad);
         color: white;
         box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
-        margin-left: -40px; /* Shift hero section slightly to the left */
+        margin-left: -40px;
     }
-
     .hero h2 {
         font-size: 3rem;
         margin-bottom: 1rem;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     }
-
     .hero p {
         font-size: 1.5rem;
         margin-bottom: 2rem;
     }
-
     .btn-3d {
         background: linear-gradient(to right, #ffcc00, #f3b655);
         color: #333;
@@ -98,96 +85,75 @@
         cursor: pointer;
         transition: transform 0.3s, box-shadow 0.3s;
     }
-
     .btn-3d:hover {
         transform: translateY(-4px);
         box-shadow: 0 8px #b38f13;
     }
-
-    /* Services Section */
     #services {
         padding: 3rem 2rem;
         background-color: #ffc691ad;
         text-align: center;
     }
-
     #services h2 {
         font-size: 2rem;
         margin-bottom: 2rem;
     }
-
     .service-cards {
         display: grid;
-        grid-template-columns:  max-content max-content max-content;
+        grid-template-columns: max-content max-content max-content;
         gap: 2rem;
     }
-
     .card {
         background: white;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         padding: 1.5rem;
-        transition: transform 0.3s, box-shadow 0.3s;    
+        transition: transform 0.3s, box-shadow 0.3s;
     }
-
     .card:hover {
         transform: translateY(-5px);
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     }
-
     .card h3 {
         font-size: 1.5rem;
         margin-bottom: 1rem;
         color: #4a90e2;
     }
-
     .card p {
         font-size: 1rem;
         color: #666;
     }
-
-    /* About Section */
     #about {
         padding: 4rem 2rem;
         background: linear-gradient(to bottom, #ffc691ad, #d4709ac1);
         color: #524e4e;
         text-align: center;
-        /* border-radius: 20px; */
         margin: o;
-        /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); */
     }
-
     #about h2 {
         font-size: 2.5rem;
         margin-bottom: 1.5rem;
         color: #636eba;
     }
-
     #about p {
         font-size: 1.3rem;
         max-width: 700px;
         margin: 0 auto;
         line-height: 1.8;
     }
-
-    /* Contact Section */
     #contact {
         padding: 4rem 2rem;
         background: linear-gradient(to bottom, #d4709ac1, #636eba);
         color: #363636;
         text-align: center;
         font-size: 20px;
-        /* border-radius: 20px; */
         margin: 0;
-        /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); */
     }
-
     #contact h2 {
         font-size: 2.5rem;
         margin-bottom: 1.5rem;
         color: #ffd2a8;
     }
-
     form {
         max-width: 600px;
         margin: 0 auto;
@@ -195,7 +161,6 @@
         flex-direction: column;
         gap: 1.5rem;
     }
-
     form input, form textarea {
         padding: 1rem;
         border: none;
@@ -203,7 +168,6 @@
         font-size: 1.1rem;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
-
     form button {
         background: linear-gradient(to right, #ffcc00, #f3b655);
         color: #333;
@@ -216,13 +180,10 @@
         cursor: pointer;
         transition: transform 0.3s, box-shadow 0.3s;
     }
-
     form button:hover {
         transform: translateY(-4px);
         box-shadow: 0 8px #050505;
     }
-
-    /* Footer */
     footer {
         background: linear-gradient(to right, #333, #444);
         color: white;
@@ -231,23 +192,18 @@
         font-size: 1rem;
         box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
     }
-
     footer p {
         margin: 0;
     }
-
-    /* Chatbox */
     #chatbox {
         position: fixed;
         bottom: 20px;
         right: 20px;
         width: 300px;
     }
-
     #chat-toggle {
         width: 100%;
     }
-
     #chat-content {
         background: white;
         border: 1px solid #ccc;
@@ -255,104 +211,81 @@
         padding: 1rem;
         margin-top: 0.5rem;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        overflow:-moz-hidden-unscrollable; /* Allow scrolling if content overflows */
+        overflow: -moz-hidden-unscrollable;
     }
-
-    /* Ensure images and elements scale properly */
     img, video, iframe {
         max-width: 100%;
         height: auto;
     }
-
-    /* Media Queries */
     @media (max-width: 768px) {
         header {
             flex-direction: column;
             align-items: flex-start;
         }
-
         nav ul {
             flex-direction: column;
             gap: 0.5rem;
         }
-
         .hero h2 {
             font-size: 2rem;
         }
-
         .hero p {
             font-size: 1rem;
         }
-
         .btn-3d {
             padding: 0.6rem 1rem;
             font-size: 0.9rem;
         }
-
         .service-cards {
             grid-template-columns: 1fr;
         }
-
         #about, #contact {
             margin: 1rem;
             padding: 2rem 1rem;
         }
-
         .hero h2 {
             font-size: 2rem;
         }
-
         .hero p {
             font-size: 1rem;
         }
-
         .btn-3d {
             padding: 0.8rem 1.5rem;
             font-size: 1rem;
         }
     }
-
     @media (max-width: 480px) {
         header {
             padding: 1rem;
         }
-
         nav ul {
             flex-direction: column;
             gap: 0.5rem;
         }
-
         .hero h2 {
             font-size: 1.5rem;
         }
-
         .hero p {
             font-size: 0.9rem;
         }
-
         .btn-3d {
             padding: 0.6rem 1rem;
             font-size: 0.8rem;
         }
-
         #about h2, #contact h2 {
             font-size: 2rem;
         }
-
         form input, form textarea {
             font-size: 1rem;
         }
-
         form button {
             font-size: 1rem;
         }
     }
 </style>
-    
 </head>
 <body>
-    <header>           
-
+    <header>
         <div class="logo">
             <h1>GiftEase</h1>
         </div>
@@ -360,18 +293,16 @@
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
-                <!-- <li><a href="#services">Services</a></li> -->
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </div>
     </header>
-
     <main style="background-image: url('image1.png'); background-size: cover; background-position: center; height: 100vh;">
         <div style="display: flex; align-items: center; justify-content: center;">
-            <div style="flex: 0 0 auto; margin-right: -100px; margin-left: -240px;"> <!-- Further adjusted margin-right -->
-                <img src="image2.png" alt="image" style="width: 800px; height: auto;"> <!-- Reduced size -->
+            <div style="flex: 0 0 auto; margin-right: -100px; margin-left: -240px;">
+                <img src="image2.png" alt="image" style="width: 800px; height: auto;">
             </div>
             <div class="hero">
                 <h2 style="margin-top: 50px;">Get Ease Finding Gifts</h2>
@@ -380,12 +311,11 @@
             </div>
         </div>
     </main>
-    <div id="acborder" style="margin-top: 10px; ">
-    <section id="about"> <!-- Moved About Us section here -->
+    <div id="acborder" style="margin-top: 10px;">
+    <section id="about">
         <h2>About Us</h2>
         <p>I am an AI gift advisor, dedicated to provide perfect gifts for your loved ones. Our mission is to make gift selection easy and as per the hobbies and likings of a person, giving a user-friendly experience.</p>
     </section>
-
     <section id="contact">
         <h2>Contact Us</h2>
         <p>
@@ -397,40 +327,29 @@
         </p>
     </section>
 </div>
-
     <footer>
         <p>&copy; 2025 GiftEase. All rights reserved.</p>
     </footer>
-
-    
     <script>
-        // Chatbox toggle functionality
         const chatToggle = document.getElementById('chat-toggle');
         const chatContent = document.getElementById('chat-content');
         chatToggle.addEventListener('click', () => {
             chatContent.style.display = chatContent.style.display === 'none' ? 'block' : 'none';
         });
-
-        // Open chat interface when "Get Started" button is clicked
         const getStartedBtn = document.getElementById('get-started-btn');
         getStartedBtn.addEventListener('click', () => {
             chatContent.style.display = 'block';
         });
-
-        // Placeholder for 3D model rendering
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
         const renderer = new THREE.WebGLRenderer();
         renderer.setSize(window.innerWidth, window.innerHeight);
         document.getElementById('3d-model').appendChild(renderer.domElement);
-
         const geometry = new THREE.BoxGeometry();
         const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
         const cube = new THREE.Mesh(geometry, material);
         scene.add(cube);
-
         camera.position.z = 5;
-
         function animate() {
             requestAnimationFrame(animate);
             cube.rotation.x += 0.01;
@@ -438,12 +357,9 @@
             renderer.render(scene, camera);
         }
         animate();
-
-        // Chat functionality
         const chatMessages = document.getElementById('chat-messages');
         const userInput = document.getElementById('user-input');
         const sendBtn = document.getElementById('send-btn');
-
         sendBtn.addEventListener('click', () => {
             const userMessage = userInput.value.trim();
             if (userMessage) {
@@ -454,7 +370,6 @@
                 }, 1000);
             }
         });
-
         function addMessage(text, sender) {
             const message = document.createElement('div');
             message.classList.add('message', sender);
