@@ -26,7 +26,7 @@
     }
 
     header {
-        background: linear-gradient(to right, #e75f88, #ffc688e3);
+        background: linear-gradient(to right, #e75f88, #f68645d4);
         color: white;
         padding: 1rem 2rem;
         display: flex;
@@ -67,10 +67,12 @@
     /* Hero Section */
     .hero {
         text-align: center;
+        border-radius: 10px;
         padding: 4.76dvw ;  
-        background: linear-gradient(to bottom, #e75f88, #ffc691ad);
+        background: linear-gradient(to bottom, #e75f88, #ffd0a4ad);
         color: white;
-        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+        margin-left: -40px; /* Shift hero section slightly to the left */
     }
 
     .hero h2 {
@@ -116,7 +118,7 @@
 
     .service-cards {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns:  max-content max-content max-content;
         gap: 2rem;
     }
 
@@ -364,67 +366,23 @@
     </div>
     </header>
 
-    <main style="background-image: url('image1.png');">
-        <div>
-        <!-- <img src="image2.png" alt="image"></div> -->
-        
+    <main style="background-image: url('image1.png'); background-size: cover; background-position: center; height: 100vh;">
+        <div style="display: flex; align-items: center; justify-content: center;">
+            <div style="flex: 0 0 auto; margin-right: -100px; margin-left: -240px;"> <!-- Further adjusted margin-right -->
+                <img src="image2.png" alt="image" style="width: 800px; height: auto;"> <!-- Reduced size -->
+            </div>
             <div class="hero">
-
-
                 <h2 style="margin-top: 50px;">Get Ease Finding Gifts</h2>
                 <p>Perfect gifts for your loved ones!!</p>
                 <a style="text-decoration: none;" href="2ndpg.html" class="btn-3d">GET STARTED!!</a>
-           
-        <!-- Chat Interface Section -->
-        <!-- <section id="chat-interface">
-            <div class="chat-header">GiftEase Chat</div>
-            <div class="chat-messages" id="chat-messages">
-                Chat messages will appear here -->
-            <!-- </div>
-            <div class="chat-input">
-                <textarea id="user-input" placeholder="Type your message here..."></textarea>
-                <button id="send-btn">Send</button>
             </div>
-        </section> -->
-
-        <!-- <section id="services">
-            <h2>Our Services</h2>
-            <div class="service-cards">
-                <div class="card">
-                    <h3>Corporate Law</h3>
-                    <p>Expert advice for businesses and corporations.</p>
-                </div>
-                <div class="card">
-                    <h3>Family Law</h3>
-                    <p>Guidance on family disputes and legal matters.</p>
-                </div>
-                <div class="card">
-                    <h3>Property Law</h3>
-                    <p>Assistance with property disputes and transactions.</p>
-                </div>
-            </div>
-        </section> -->
-
-        <!-- <div id="about" style="height: 200px; background: linear-gradient(to bottom, #ffc691ad, #d4709ac1);"> -->
-            <h2 style="margin-top: 150px; color: white;"> About Us</h2>
-            <p style="color: white">I am a AI gift advisor, dedicated to provide perfect gifts for your loved ones. Our mission is to make gift selection easy and as per the hobbies and likings of a person, giving a user-friendly experience.</p>
         </div>
-        </section>
-
-<!-- 
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <form>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
-                <button type="submit" class="btn-3d">Submit</button>
-            </form>
-        </section> -->
     </main>
+
+    <section id="about"> <!-- Moved About Us section here -->
+        <h2>About Us</h2>
+        <p>I am a AI gift advisor, dedicated to provide perfect gifts for your loved ones. Our mission is to make gift selection easy and as per the hobbies and likings of a person, giving a user-friendly experience.</p>
+    </section>
 
     <footer>
         <p>&copy; 2025 GiftEase. All rights reserved.</p>
